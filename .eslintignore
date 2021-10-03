@@ -1,0 +1,12 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+.vscode
+*.iml
+out
+gen
+node_modules
+package-lock.json
+yarn.lock
