@@ -3,5 +3,5 @@ module.exports = {
     semi: false,
     jsxSingleQuote: true,
     jsxBracketSameLine: true,
-    arrowParens: "avoid",
+    arrowParens: "avoid"
 };
