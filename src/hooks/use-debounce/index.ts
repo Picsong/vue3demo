@@ -1,6 +1,6 @@
-export default function useDebounce (callback: Function, ms = 500, immediate = false) {
+export default function useDebounce(callback: Function, ms = 500, immediate = false) {
   let timer: number | null = null
-  return function (...args:any[]) {
+  return function (...args: any[]) {
     if (timer) {
       clearTimeout(timer)
     }

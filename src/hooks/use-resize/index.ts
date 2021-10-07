@@ -1,14 +1,14 @@
-import { onMounted, onUnmounted } from 'vue'
-import { useDebounce } from '@hooks/index'
+import { onMounted, onUnmounted } from "vue"
+import { useDebounce } from "@hooks/index"
 
-export default function useResize (callback: Function, ms?: number) {
+export default function useResize(callback: Function, ms?: number) {
   const resize = useDebounce(callback, ms)
 
   onMounted(() => {
-    window.addEventListener('resize', resize)
+    window.addEventListener("resize", resize)
   })
 
   onUnmounted(() => {
-    window.removeEventListener('resize', resize)
+    window.removeEventListener("resize", resize)
   })
 }
