@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     "standard", // eslint-config-standard
+    "plugin:@typescript-eslint/recommended", // TS推荐配置
     "plugin:vue/vue3-recommended", // 必不可少的-essential，推荐的-recommended，强烈推荐的-strongly-recommended
     "plugin:prettier/recommended", // 简化prettier配置
   ],
@@ -19,7 +20,7 @@ module.exports = {
   plugins: ["vue", "@typescript-eslint"],
   rules: {
     "prettier/prettier": "warn",
-    "no-unused-vars": 0,
-    "vue/one-component-per-file": 0,
+    "no-unused-vars": "off",
+    "vue/one-component-per-file": "off",
   },
 }
