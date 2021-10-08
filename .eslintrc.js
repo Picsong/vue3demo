@@ -19,5 +19,6 @@ module.exports = {
   plugins: ["vue", "@typescript-eslint"],
   rules: {
     "prettier/prettier": "warn",
+    "vue/one-component-per-file": 0,
   },
 }
