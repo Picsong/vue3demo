@@ -1,6 +1,6 @@
 import { ref, defineComponent, PropType, onMounted } from "vue"
 import { useDebounce, useResize } from "@hooks/index"
-import "./index.scss"
+import "./index.less"
 
 interface IDesignSize {
   designWidth: number

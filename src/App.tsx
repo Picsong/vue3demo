@@ -1,6 +1,7 @@
 import { defineComponent, h } from "vue"
 import { Button } from "ant-design-vue"
 import ScreenAdapter from "@components/ScreenAdapter"
+import MonacoEditor from "@components/MonacoEditor"
 import "./global.scss"
 
 export default defineComponent({
@@ -21,11 +22,8 @@ export default defineComponent({
       return (
         <div class='app-wrap'>
           <ScreenAdapter>
-            {h(component)}
-            {/* <Button type={"primary"} style={{ margin: "10px" }}> */}
-            {/*  一个按钮 */}
-            {/* </Button> */}
-            {/* <Spin /> */}
+            {/* {h(component)} */}
+            <MonacoEditor />
           </ScreenAdapter>
         </div>
       )
