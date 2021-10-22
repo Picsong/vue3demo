@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { ref, defineProps } from "vue"
 
+import { ElButton } from "element-plus"
 defineProps<{ msg: string }>()
 
 const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <ElButton>{{ msg }}</ElButton>
 </template>
 
 <style scoped>

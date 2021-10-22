@@ -1,7 +1,11 @@
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import vueJsx from "@vitejs/plugin-vue-jsx"
-import styleImport from "vite-plugin-style-import"
+import ElementPlus from "unplugin-element-plus/vite"
+import Components from "unplugin-vue-components/vite"
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
+
+// import styleImport from "vite-plugin-style-import"
 // const prefix = `monaco-editor/esm/vs`
 export default defineConfig({
   build: {
@@ -36,20 +40,24 @@ export default defineConfig({
       },
     }),
     vueJsx(),
-    styleImport({
-      libs: [
-        {
-          libraryName: "ant-design-vue",
-          esModule: true,
-          resolveStyle: name => {
-            return `ant-design-vue/es/${name}/style`
-          },
-        },
-      ],
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
+    ElementPlus(),
+    // styleImport({
+    //   libs: [
+    //     {
+    //       libraryName: "ant-design-vue",
+    //       esModule: true,
+    //       resolveStyle: name => {
+    //         return `ant-design-vue/es/${name}/style`
+    //       },
+    //     },
+    //   ],
+    // }),
   ],
   optimizeDeps: {
-    include: ["ant-design-vue", "ant-design-vue/es/locale/zh_CN", "@ant-design/icons-vue", "monaco-editor"],
+    include: ["element-plus/es/locale/lang/zh-cn", "@element-plus/icons"],
   },
   resolve: {
     alias: {
