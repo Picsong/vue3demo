@@ -62,9 +62,10 @@ export default defineConfig({
   resolve: {
     alias: {
       vue: "vue/dist/vue.esm-bundler.js",
+      // '@/': new URL('./src/', import.meta.url).pathname,
       "@": "/src",
       "@hooks": "/src/hooks",
-      "@worker": "/src/assets/worker",
+      "@views": "/src/views",
       "@components": "/src/components",
     },
   },

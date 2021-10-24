@@ -15,7 +15,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@worker/*": ["./src/assets/worker/*"],
+      "@views/*": ["./src/views/*"],
       "@components/*": ["./src/components/*"]
     }
   },
