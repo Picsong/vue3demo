@@ -22,5 +22,6 @@ module.exports = {
     "prettier/prettier": "warn",
     "no-unused-vars": "off",
     "vue/one-component-per-file": "off",
+    "vue/no-mutating-props": "off",
   },
 }

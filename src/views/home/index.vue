@@ -1,11 +1,9 @@
 <template>
-  <div>首页</div>
+  <div ref="test">首页</div>
 </template>
 
-<script>
-export default {
-  name: "Home",
-}
+<script setup>
+import { ref, onMounted, defineComponent } from "vue"
 </script>
 
 <style scoped></style>
