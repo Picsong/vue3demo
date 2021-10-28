@@ -1,5 +1,5 @@
 <template>
-  <ElForm v-bind="jsonSchema.formConfig">
+  <ElForm ref="formRef" v-bind="jsonSchema.formConfig">
     <ElRow v-bind="jsonSchema.rowConfig">
       <!--   渲染表单项   -->
       <template v-for="item in jsonSchema.columns" :key="item.dataIndex">
@@ -20,26 +20,27 @@
 
 <script lang="ts">
 import { defineComponent, DefineComponent, PropType } from "vue"
-import { ElForm, ElFormItem, ElRow, ElCol, ElInput, ElSelectV2, ElInputNumber } from "element-plus"
+import { ElForm, ElFormItem, ElRow, ElCol, ElInput, ElSelectV2, ElInputNumber, ElTimeSelect } from "element-plus"
 
 interface ISlot {
   name: string
   content: DefineComponent
 }
 export interface IJsonSchema {
-  formConfig?: InstanceType<typeof ElForm>["$props"]
-  formItemConfig?: InstanceType<typeof ElFormItem>["$props"]
-  rowConfig?: InstanceType<typeof ElRow>["$props"]
-  colConfig?: InstanceType<typeof ElCol>["$props"]
-  dataIndex: string
-  valueType: string
-  options?: unknown
+  formConfig?: InstanceType<typeof ElForm>["$props"] & Record<string, any>
+  formItemConfig?: InstanceType<typeof ElFormItem>["$props"] & Record<string, any>
+  rowConfig?: InstanceType<typeof ElRow>["$props"] & Record<string, any>
+  colConfig?: InstanceType<typeof ElCol>["$props"] & Record<string, any>
+  dataIndex?: string
+  valueType?: string
+  options?: any
   slots?: ISlot[]
   columns?: IJsonSchema[]
+  [propName: string]: any
 }
 export default defineComponent({
   name: "SchemaForm",
-  components: { ElForm, ElFormItem, ElRow, ElCol, ElInput, ElSelectV2, ElInputNumber },
+  components: { ElForm, ElFormItem, ElRow, ElCol, ElInput, ElSelectV2, ElInputNumber, ElTimeSelect },
   props: {
     jsonSchema: {
       type: Object as PropType<IJsonSchema>,

@@ -23,5 +23,6 @@ module.exports = {
     "no-unused-vars": "off",
     "vue/one-component-per-file": "off",
     "vue/no-mutating-props": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 }
